@@ -24,3 +24,6 @@ foreach row $query {
 
 ## License
 Licensed under MIT License.
+
+## API docs
+Coming soon...
