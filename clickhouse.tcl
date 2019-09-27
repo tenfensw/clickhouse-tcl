@@ -5,7 +5,7 @@ package require Tcl 8.5
 package require http 2.5
 
 namespace eval clickhouse {
-	proc connect {user password} {
+	proc connect {user password host port} {
 		set result [dict create clickhouse-tcl 1]
 		dict set result user $user 
 		dict set result password $password
