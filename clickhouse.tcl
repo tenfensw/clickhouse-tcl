@@ -5,7 +5,7 @@ package require Tcl 8.5
 package require http 2.5
 
 namespace eval clickhouse {
-	proc connect {user password {host 127.0.0.1} {port 8123}} {
+	proc connect {user password} {
 		set result [dict create clickhouse-tcl 1]
 		dict set result user $user 
 		dict set result password $password
@@ -51,7 +51,7 @@ namespace eval clickhouse {
 		return $result
 	}
 	
-	proc select {connection what where {output binding} {additional_args {}}} {
+	proc select {connection what where output additional_args} {
 		if {! [clickhouse::valid $connection]} {
 			error "Connection invalid, did you create it via clickhouse::connect?"
 		}
